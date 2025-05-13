@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Thakali Tavern - Authentic Nepalese Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects */
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            transition: all 0.5s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #f59e0b;
+            transition: width 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .dish-card {
+            perspective: 1000px;
+        }
+        
+        .dish-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .dish-card:hover .dish-inner {
+            transform: rotateY(10deg);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-utensils text-2xl text-amber-600"></i>
+                    <span class="text-xl font-bold text-gray-800">The Thakali Tavern</span>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-800 hover:text-amber-600 font-medium py-2">Home</a>
+                    <a href="#menu" class="nav-link text-gray-800 hover:text-amber-600 font-medium py-2">Menu</a>
+                    <a href="#reservation" class="nav-link text-gray-800 hover:text-amber-600 font-medium py-2">Reservation</a>
+                    <a href="#about" class="nav-link text-gray-800 hover:text-amber-600 font-medium py-2">About Us</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-amber-600 font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 border-t">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-amber-600">Home</a>
+            <a href="#menu" class="block py-2 text-gray-800 hover:text-amber-600">Menu</a>
+            <a href="#reservation" class="block py-2 text-gray-800 hover:text-amber-600">Reservation</a>
+            <a href="#about" class="block py-2 text-gray-800 hover:text-amber-600">About Us</a>
+            <a href="#contact" class="block py-2 text-gray-800 hover:text-amber-600">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-image flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4 fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to The Thakali Tavern</h1>
+            <p class="text-xl md:text-2xl mb-8">Authentic Nepalese Cuisine with a Modern Twist</p>
+            <a href="#reservation" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block">
+                Book a Table
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Signature Dishes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dish 1 -->
+                <div class="dish-card">
+                    <div class="dish-inner bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                        <img src="C:\Users\lunat\OneDrive\Desktop\The Thakali Tavern\thakali thali.jpeg" alt="Thakali Thali" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Thakali Thali</h3>
+                            <p class="text-gray-600 mb-4">Our signature platter featuring dal, bhat, tarkari, achar, and meat curry with unlimited refills.</p>
+                            <span class="text-amber-600 font-bold">$14.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dish 2 -->
+                <div class="dish-card">
+                    <div class="dish-inner bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                        <img src="C:\Users\lunat\OneDrive\Desktop\The Thakali Tavern\momo platter.jpeg" alt="Momo Platter" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Momo Platter</h3>
+                            <p class="text-gray-600 mb-4">Steamed dumplings with your choice of chicken, buffalo, or vegetable filling. Served with spicy tomato chutney.</p>
+                            <span class="text-amber-600 font-bold">$10.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dish 3 -->
+                <div class="dish-card">
+                    <div class="dish-inner bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Newari Bhoj" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Newari Bhoj</h3>
+                            <p class="text-gray-600 mb-4">Traditional Newari feast with choila, bara, chatamari, and other delicacies from the Kathmandu Valley.</p>
+                            <span class="text-amber-600 font-bold">$18.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#menu" class="border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block">
+                    View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Menu</h2>
+            
+            <div class="flex flex-wrap mb-8 justify-center">
+                <button class="menu-category-btn active px-4 py-2 mx-2 bg-amber-600 text-white rounded-full" data-category="all">All Items</button>
+                <button class="menu-category-btn px-4 py-2 mx-2 bg-white text-gray-800 rounded-full hover:bg-amber-100" data-category="starters">Starters</button>
+                <button class="menu-category-btn px-4 py-2 mx-2 bg-white text-gray-800 rounded-full hover:bg-amber-100" data-category="mains">Main Courses</button>
+                <button class="menu-category-btn px-4 py-2 mx-2 bg-white text-gray-800 rounded-full hover:bg-amber-100" data-category="desserts">Desserts</button>
+                <button class="menu-category-btn px-4 py-2 mx-2 bg-white text-gray-800 rounded-full hover:bg-amber-100" data-category="drinks">Drinks</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="menu-items">
+                <!-- Menu items will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Make a Reservation</h2>
+            
+            <div class="bg-gray-100 rounded-lg p-8 shadow-md">
+                <form id="reservation-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="guests" class="block text-gray-700 font-medium mb-2">Number of Guests</label>
+                        <select id="guests" name="guests" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7">7+ People</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="date" class="block text-gray-700 font-medium mb-2">Date</label>
+                        <input type="date" id="date" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="time" class="block text-gray-700 font-medium mb-2">Time</label>
+                        <select id="time" name="time" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label for="special-requests" class="block text-gray-700 font-medium mb-2">Special Requests</label>
+                        <textarea id="special-requests" name="special-requests" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                    </div>
+                    
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="reservation-success" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-md text-center">
+                    <i class="fas fa-check-circle text-2xl mb-2"></i>
+                    <h3 class="font-bold">Reservation Confirmed!</h3>
+                    <p>We've sent a confirmation to your email. See you soon!</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-amber-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-clock text-3xl text-amber-600 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Opening Hours</h3>
+                    <p class="text-gray-700">Monday - Friday: 11:00 AM - 9:00 PM</p>
+                    <p class="text-gray-700">Saturday - Sunday: 10:00 AM - 10:00 PM</p>
+                </div>
+                
+                <div class="bg-amber-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-phone-alt text-3xl text-amber-600 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Call Us</h3>
+                    <p class="text-gray-700">041061303</p>
+                    <p class="text-gray-700">For large parties or special events</p>
+                </div>
+                
+                <div class="bg-amber-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-map-marker-alt text-3xl text-amber-600 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Location</h3>
+                    <p class="text-gray-700">37 Merrylands Rd</p>
+                    <p class="text-gray-700">Merrylands, NSW, Australia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Story</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Authentic Thakali Cuisine Since 2010</h3>
+                    <p class="text-gray-700 mb-4">Founded by Chef Rajesh Thakali, our restaurant brings the authentic flavors of the Thak Khola region of Nepal to your table. With recipes passed down through generations, we pride ourselves on preserving traditional cooking methods while incorporating modern presentation.</p>
+                    <p class="text-gray-700 mb-4">Our ingredients are sourced locally whenever possible, and we work directly with Nepalese farmers to import specialty spices and grains that give our dishes their distinctive flavors.</p>
+                    <p class="text-gray-700">In 2020, we were honored to receive the "Best Nepalese Restaurant" award from the International Culinary Association, a testament to our commitment to quality and authenticity.</p>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Our Restaurant" class="w-full rounded-lg shadow-lg">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-award text-2xl text-amber-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Best Nepalese Restaurant</p>
+                                <p class="text-sm text-gray-600">International Culinary Association 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Meet Our Team</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center">
+                        <img src="C:\Users\lunat\OneDrive\Desktop\The Thakali Tavern\WhatsApp Image 2025-05-03 at 18.29.02_cf20aeb3.jpg" alt="Aryan Shrestha" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-1">Aryan Shrestha</h4>
+                            <p class="text-amber-600 font-medium mb-3">Head Chef & Owner</p>
+                            <p class="text-gray-600">With over 25 years of experience, Chef Rajesh brings authentic Thakali flavors to every dish.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center">
+                        <img src="C:\Users\lunat\OneDrive\Desktop\The Thakali Tavern\Bikash Image 2025-05-03 at 18.33.46_18a032a4.jpg" alt="Bikash Bohara" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-1">Bikash Bohara</h4>
+                            <p class="text-amber-600 font-medium mb-3">Sous Chef</p>
+                            <p class="text-gray-600">Specializing in Newari cuisine, Anita adds her creative touch to our traditional dishes.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center">
+                        <img src="C:\Users\lunat\OneDrive\Desktop\The Thakali Tavern\Pratish 2025-05-03 183431.png" alt="Pratish Manandhar" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-1">Pratish Manandhar</h4>
+                            <p class="text-amber-600 font-medium mb-3">Restaurant Manager</p>
+                            <p class="text-gray-600">Ensuring every guest has an exceptional dining experience is Pratish's top priority.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center">
+                        <img src="C:\Users\lunat\OneDrive\Desktop\The Thakali Tavern\Roshan Image 2025-05-03 183519.png" alt="Roshan Gajmer" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-gray-800 mb-1">Roshan Gajmer</h4>
+                            <p class="text-amber-600 font-medium mb-3">Pastry Chef</p>
+                            <p class="text-gray-600">Roshan's desserts blend traditional Nepalese flavors with contemporary techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Contact Us</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h3>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Address</h4>
+                                <p class="text-gray-600">37 Merrylands Rd, Merryalnds, 2160, NSW</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Phone</h4>
+                                <p class="text-gray-600">0412345678</p>
+                                <p class="text-gray-600">0410613038</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">info@thakalitavern.com</p>
+                                <p class="text-gray-600">reservations@thakalitavern.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-100 hover:bg-amber-100 p-3 rounded-full text-gray-700 hover:text-amber-600 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-amber-100 p-3 rounded-full text-gray-700 hover:text-amber-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-amber-100 p-3 rounded-full text-gray-700 hover:text-amber-600 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-amber-100 p-3 rounded-full text-gray-700 hover:text-amber-600 transition duration-300">
+                            <i class="fab fa-yelp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="contact-name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="contact-name" name="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                        </div>
+                        
+                        <div>
+                            <label for="contact-email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="contact-email" name="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                        </div>
+                        
+                        <div>
+                            <label for="contact-subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="contact-subject" name="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                        </div>
+                        
+                        <div>
+                            <label for="contact-message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="contact-message" name="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div id="contact-success" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-md">
+                        <i class="fas fa-check-circle text-2xl mb-2"></i>
+                        <h3 class="font-bold">Message Sent Successfully!</h3>
+                        <p>We'll get back to you within 24 hours. Thank you for contacting us.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Find Us</h3>
+                <div class="bg-gray-100 rounded-lg overflow-hidden h-96">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.715835353892!2d150.9827873152099!3d-33.83891998066391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39aecdf%3A0x5017d681632b9e0!2s37%20Merrylands%20Rd%2C%20Merrylands%20NSW%202160%2C%20Australia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-utensils text-2xl text-amber-400"></i>
+                        <span class="text-xl font-bold">The Thakali Tavern</span>
+                    </div>
+                    <p class="text-gray-400">Bringing authentic Nepalese flavors to your table since 2010. Experience the taste of the Himalayas with our traditional recipes and warm hospitality.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-400 transition duration-300">Home</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-amber-400 transition duration-300">Menu</a></li>
+                        <li><a href="#reservation" class="text-gray-400 hover:text-amber-400 transition duration-300">Reservations</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-400 transition duration-300">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>11:00 AM - 9:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>10:00 AM - 10:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>10:00 AM - 10:00 PM</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for special offers and updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-r-md">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 The Thakali Tavern. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-yelp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Menu category filtering
+        const menuItems = [
+            { id: 1, name: "Vegetable Momo", description: "Steamed dumplings filled with seasonal vegetables and spices", price: "$8.99", category: "starters" },
+            { id: 2, name: "Chicken Momo", description: "Steamed dumplings filled with minced chicken and herbs", price: "$9.99", category: "starters" },
+            { id: 3, name: "Buffalo Momo", description: "Steamed dumplings filled with minced buffalo meat", price: "$10.99", category: "starters" },
+            { id: 4, name: "Sekuwa", description: "Grilled marinated meat skewers (chicken, buffalo, or pork)", price: "$11.99", category: "starters" },
+            { id: 5, name: "Thakali Thali", description: "Traditional platter with dal, bhat, tarkari, achar, and meat curry", price: "$14.99", category: "mains" },
+            { id: 6, name: "Newari Bhoj", description: "Traditional Newari feast with choila, bara, and chatamari", price: "$18.99", category: "mains" },
+            { id: 7, name: "Chicken Chilly", description: "Stir-fried chicken with bell peppers, onions, and spices", price: "$15.99", category: "mains" },
+            { id: 8, name: "Buffalo Sukuti", description: "Dried and spiced buffalo meat stir-fry", price: "$16.99", category: "mains" },
+            { id: 9, name: "Dal Bhat", description: "Steamed rice with lentil soup and seasonal vegetables", price: "$12.99", category: "mains" },
+            { id: 10, name: "Sel Roti", description: "Traditional Nepali rice doughnut", price: "$4.99", category: "desserts" },
+            { id: 11, name: "Juju Dhau", description: "King of yogurt - sweetened creamy yogurt", price: "$5.99", category: "desserts" },
+            { id: 12, name: "Gundruk Soup", description: "Fermented leafy vegetable soup with spices", price: "$6.99", category: "starters" },
+            { id: 13, name: "Masala Chiya", description: "Spiced Nepali tea", price: "$3.50", category: "drinks" },
+            { id: 14, name: "Tongba", description: "Traditional millet-based alcoholic beverage", price: "$8.99", category: "drinks" },
+            { id: 15, name: "Lassi", description: "Sweet or salty yogurt drink", price: "$4.99", category: "drinks" }
+        ];
+        
+        const menuContainer = document.getElementById('menu-items');
+        const categoryButtons = document.querySelectorAll('.menu-category-btn');
+        
+        function renderMenuItems(category = 'all') {
+            menuContainer.innerHTML = '';
+            
+            const filteredItems = category === 'all' 
+                ? menuItems 
+                : menuItems.filter(item => item.category === category);
+            
+            filteredItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'menu-item bg-white rounded-lg p-6 shadow-md transition duration-300';
+                menuItem.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-800">${item.name}</h3>
+                        <span class="text-amber-600 font-bold">${item.price}</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">${item.description}</p>
+                    <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
+                `;
+                menuContainer.appendChild(menuItem);
+            });
+        }
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-amber-600', 'text-white'));
+                categoryButtons.forEach(btn => btn.classList.add('bg-white', 'text-gray-800'));
+                
+                button.classList.add('active', 'bg-amber-600', 'text-white');
+                button.classList.remove('bg-white', 'text-gray-800');
+                
+                const category = button.getAttribute('data-category');
+                renderMenuItems(category);
+            });
+        });
+        
+        // Initialize with all menu items
+        renderMenuItems();
+        
+        // Form submission handling
+        const reservationForm = document.getElementById('reservation-form');
+        const reservationSuccess = document.getElementById('reservation-success');
+        
+        reservationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            setTimeout(() => {
+                reservationForm.reset();
+                reservationForm.classList.add('hidden');
+                reservationSuccess.classList.remove('hidden');
+                
+                // Reset after 5 seconds
+                setTimeout(() => {
+                    reservationSuccess.classList.add('hidden');
+                    reservationForm.classList.remove('hidden');
+                }, 5000);
+            }, 1000);
+        });
+        
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccess = document.getElementById('contact-success');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            setTimeout(() => {
+                contactForm.reset();
+                contactForm.classList.add('hidden');
+                contactSuccess.classList.remove('hidden');
+                
+                // Reset after 5 seconds
+                setTimeout(() => {
+                    contactSuccess.classList.add('hidden');
+                    contactForm.classList.remove('hidden');
+                }, 5000);
+            }, 1000);
+        });
+        
+        // Set minimum date for reservation to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').min = today;
+    </script>
+</body>
+</html>
